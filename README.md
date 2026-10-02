@@ -3,8 +3,7 @@
 Code, frozen data and notebooks for
 
 > M. Chertkov, *How suboptimal is my controller allowed to be? Linearly solvable completion
-> certificates for stochastic network control*, submitted to SIAM Journal on Control and
-> Optimization (2026).
+> certificates for stochastic network control*, (October 2026).
 
 **The question.** On a large network the optimal controller is out of reach, so the practical
 question is how far an *implementable* controller is from optimal. Any subsolution of the
