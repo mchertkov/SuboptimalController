@@ -1,0 +1,18 @@
+{
+  "stage": "5B2_sparse_design",
+  "noise": "activity_scaled",
+  "baseline_metric": "activity_specific",
+  "sigma_rms": 0.15,
+  "shadow_alpha": 0.005,
+  "shadow_seeds": [
+    52901,
+    52902
+  ],
+  "shadow_paths": 96,
+  "dt": 0.0025,
+  "T": 3.0,
+  "lambda_max": 0.008717991255855734,
+  "full_load_completion_authority": 34.54263167752986,
+  "runtime_s": 15.40380859375,
+  "budget_rule": "A_k=min(sum exact-completion target on noise set, sum target on shadow set); each selected set receives A_k proportional to its own target, so g_add<=gplus and k=64 is exact completion"
+}

@@ -1,0 +1,74 @@
+{
+  "stage": "5A3_metric_aware_H3_control",
+  "date": "2026-09-24",
+  "status": "COMPLETE",
+  "manuscript_modified": false,
+  "sigma_rms": 0.15,
+  "architecture": "H3 all 54 generators independently actuated",
+  "total_generator_authority": 270.0,
+  "saturation": "none",
+  "lqr_weights": {
+    "angle": 2.0,
+    "frequency": 0.5
+  },
+  "tuning": {
+    "seeds": [
+      51501,
+      51502
+    ],
+    "paths_per_seed_per_noise": 16,
+    "objective": "equal-weight average smooth J over homogeneous and activity-scaled noise",
+    "selected_alpha": {
+      "uniform": 0.005,
+      "robust_fixed": 0.005,
+      "activity_specific": 0.005
+    }
+  },
+  "evaluation": {
+    "common_crn_seeds": [
+      51601,
+      51602
+    ],
+    "paths_per_seed": 96,
+    "n_paths": 192,
+    "dt": 0.0025,
+    "T": 3.0
+  },
+  "activity_specific_activity_audit": {
+    "design": "activity_specific",
+    "noise": "activity_scaled",
+    "n_paths": 3072,
+    "J_refined": 0.04104670478742143,
+    "J_sd": 0.004237554264977248,
+    "J_se": 7.645478423719565e-05,
+    "cross_probability": 0.16341145833333334,
+    "Jplus": 0.0405741827398406,
+    "Jplus_rep_sd": 2.2211836855163706e-05,
+    "gap_plus_refined": 0.00047252204758083116,
+    "gap_fraction_refined": 0.01151181440819662,
+    "gap_mc_se_approx": 7.961595147479271e-05,
+    "gap_over_mc_se": 5.935017277667489,
+    "seeds": [
+      51701,
+      51702,
+      51703,
+      51704,
+      51705,
+      51706,
+      51707,
+      51708,
+      51709,
+      51710,
+      51711,
+      51712,
+      51713,
+      51714,
+      51715,
+      51716
+    ]
+  },
+  "interpretation": {
+    "Jplus": "exact completed problem value is an analytic HJB lower certificate; displayed values are MC estimates",
+    "crossing": "empirical safety diagnostic only"
+  }
+}

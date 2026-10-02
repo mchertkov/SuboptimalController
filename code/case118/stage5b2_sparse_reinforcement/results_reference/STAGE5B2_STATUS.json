@@ -1,0 +1,58 @@
+{
+  "stage": "case118_stage5B2_sparse_physical_reinforcement",
+  "date": "2026-09-24",
+  "status": "COMPLETE",
+  "manuscript_modified": false,
+  "sigma_rms": 0.15,
+  "k_values": [
+    5,
+    10,
+    20,
+    40,
+    64
+  ],
+  "placement_rules": [
+    "noise_only",
+    "H4_LQR_shadow_proxy"
+  ],
+  "evaluation": {
+    "seeds": [
+      53201,
+      53202
+    ],
+    "paths_per_seed": 96,
+    "n_paths": 192,
+    "dt_s": 0.0025,
+    "T_s": 3.0,
+    "common_random_numbers": true
+  },
+  "common_lower_oracles": {
+    "homogeneous": 0.075024198177028,
+    "activity_scaled": 0.04057418273984063
+  },
+  "key_results": {
+    "homogeneous": {
+      "generator_only_J_sample": 0.0767247097108545,
+      "full_completion_LQR_J_sample": 0.0752160485041719,
+      "paired_delta_full_vs_generator": -0.001508661206682596,
+      "full_added_authority": 320.0,
+      "generator_only_crossing": 0.3020833333333333,
+      "full_crossing": 0.25
+    },
+    "activity_scaled": {
+      "generator_only_J_sample": 0.0406678883798951,
+      "full_completion_LQR_J_sample": 0.0406327211680125,
+      "paired_delta_full_vs_generator": -3.5167211882597416e-05,
+      "full_added_authority": 34.54263167752986,
+      "generator_only_crossing": 0.1666666666666666,
+      "full_crossing": 0.1666666666666666
+    }
+  },
+  "activity_shadow_minus_noise": {
+    "5": -1.948007436354832e-05,
+    "10": -2.0978862941543545e-05,
+    "20": -2.248188460904768e-05,
+    "40": -1.1398155067253627e-05
+  },
+  "robust_fixed_note": "Retained as two-scenario generator-metric benchmark only; its least completion includes generator deficits, so a load-only k=64 path would not equal its exact PIC completion."
+}
