@@ -1,0 +1,36 @@
+{
+  "stage": "case118_stage4_pic_certificate",
+  "date": "2026-09-24",
+  "status": "COMPLETE_FOR_NUMERICAL_PIC_AND_WPLUS_CERTIFICATE; WMINUS_REMAINS_CANDIDATE_PENDING_DOMAIN_WIDE_INTERIOR_ENCLOSURE",
+  "manuscript_modified": false,
+  "primary_sigma_rms": 0.15,
+  "numerical_discretization": {
+    "upper_cost_dt_s": 0.0025,
+    "Wminus_dt_s": 0.005,
+    "Wplus_homogeneous_dt_s": 0.0025,
+    "Wplus_activity_primary_dt_s": 0.0025,
+    "Wplus_activity_sigma_0p10_0p20_dt_s": 0.005,
+    "dt_spotcheck_file": "results/stage4_pic_dt_spotcheck.csv"
+  },
+  "Wplus": {
+    "mathematical_status": "automatic HJB subsolution / rigorous exact lower value",
+    "numerical_status": "importance-sampled Monte Carlo estimate; not itself a rigorous finite-sample confidence lower bound",
+    "H4_definition": "H3 completed value"
+  },
+  "Wminus": {
+    "mathematical_status": "candidate lower value until curvature sign is enclosed on entire compact domain",
+    "representative_screen_all_positive": true,
+    "min_trace": 0.0099533433750472,
+    "min_sampled_direction": 0.0094351015811539,
+    "domain_wide_interior_enclosure": false
+  },
+  "terminal_cycle_energy": {
+    "status": "analytic compact-tube terminal layer",
+    "energy_per_bus_bar": 0.34,
+    "omega_inf_bar": 6.5,
+    "delta_bar_deg": 84.0,
+    "min_safe_layer_ms": 1.6016723064432967,
+    "max_safe_layer_ms": 2.945094493571692
+  },
+  "next_if_full_Wminus_rigor_needed": "adaptive cell/interval enclosure of the interior directional curvature over the compact stopped domain"
+}
