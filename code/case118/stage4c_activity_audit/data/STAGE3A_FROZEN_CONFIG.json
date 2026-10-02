@@ -1,0 +1,144 @@
+{
+  "stage": "case118_stage3A_controller_freeze",
+  "date": "2026-09-24",
+  "status": "FROZEN_PENDING_USER_REVIEW_BEFORE_STAGE3B",
+  "manuscript_modified": false,
+  "model": {
+    "case": "MATPOWER IEEE 118-bus lossless fixed-voltage reduction",
+    "alpha": 4.0,
+    "event_bus": 90,
+    "removed_net_load_MW": 656.5898305084745,
+    "n_buses": 118,
+    "n_generators": 54,
+    "n_branches": 186,
+    "cycle_rank": 69,
+    "angle_gauge_bus": 1,
+    "matpower_slack_bus": 69,
+    "inertia_generator": 0.3,
+    "inertia_nongenerator": 0.02,
+    "damping_all": 0.05,
+    "horizon_s": 3.0,
+    "dt_s": 0.0025,
+    "sigma_rms_training": 0.15,
+    "smooth_cost": {
+      "c_E": 0.08,
+      "c_B": 0.02,
+      "c_T": 0.2,
+      "barrier": "Bregman of -log cos with even C4 Taylor continuation beyond 82 deg"
+    },
+    "synchrony_event": "max raw MATPOWER-branch |angle difference| >= 90 deg; recorded separately, not added to J"
+  },
+  "noise_models": {
+    "homogeneous": "Gamma_i=sigma_rms",
+    "activity_scaled": "a_i=|p_pre_i|; raw Gamma_i=0.25+min(a_i/q75(a),4); RMS-normalize over all 118 buses"
+  },
+  "architectures": {
+    "H0": {
+      "rank": 1,
+      "definition": "single physical MATPOWER slack generator",
+      "slack_bus": 69,
+      "matrix_key": "Qgen_H0"
+    },
+    "H1": {
+      "rank": 1,
+      "definition": "equal distributed generator mode q=1/sqrt(54)",
+      "matrix_key": "Qgen_H1"
+    },
+    "H2": {
+      "rank": 3,
+      "definition": "uniform generator mode plus the first two nonconstant/soft eigenmodes of the post-event Kron-reduced generator stiffness",
+      "matrix_key": "Qgen_H2_r3",
+      "rank_scan": [
+        3,
+        5,
+        10
+      ],
+      "selection_rule": "smallest scanned rank whose tuned two-noise LQR cost is within one Monte-Carlo standard error of rank-10; safety crossing is secondary, not the optimization objective",
+      "selection_reason": "ranks 3,5,10 were statistically unresolved at training resolution; choose rank 3 as the parsimonious representative"
+    },
+    "H3": {
+      "rank": 54,
+      "definition": "independent actuation at all generator buses",
+      "matrix_key": "Qgen_H3"
+    }
+  },
+  "controllers": {
+    "static": "fixed post-event equal generator balancing only; no transient feedback",
+    "droop": {
+      "formula": "v=-k Qgen^T omega_G; u_G=Qgen v",
+      "selected_k": {
+        "H0": 0.0125,
+        "H1": 0.005,
+        "H2": 0.0125,
+        "H3": 0.0125
+      }
+    },
+    "scaled_lqr": {
+      "formula": "v=-alpha K x_red; u_G=Qgen v",
+      "CARE_weights": {
+        "angle_weight": 2.0,
+        "frequency_weight": 0.5,
+        "control_weight_R": 0.2
+      },
+      "selected_alpha": {
+        "H0": 0.00125,
+        "H1": 0.00125,
+        "H2": 0.0025,
+        "H3": 0.005
+      },
+      "gain_matrix_keys": {
+        "H0": "LQR_K_H0",
+        "H1": "LQR_K_H1",
+        "H2": "LQR_K_H2_r3",
+        "H3": "LQR_K_H3"
+      }
+    },
+    "saturation": {
+      "enabled": false,
+      "convention": "no command clipping in Stage 3A/3B baseline comparison unless a later robustness experiment explicitly adds it"
+    }
+  },
+  "training": {
+    "objective": "equal-weight average of smooth operational J at sigma_rms=0.15 over homogeneous and activity-scaled noise; crossing probability tracked separately",
+    "coarse_scan": {
+      "seeds": [
+        31001,
+        31002
+      ],
+      "paths_per_seed_per_noise": 8,
+      "note": "screening only"
+    },
+    "focused_confirmation": {
+      "seeds": [
+        31101,
+        31102
+      ],
+      "paths_per_seed_per_noise": 16,
+      "note": "used to select scalar gains and H2 rank"
+    },
+    "freeze_check": {
+      "seeds": [
+        31201,
+        31202
+      ],
+      "paths_per_seed_per_noise": 32,
+      "note": "fresh Stage-3A-only confirmation of already selected configurations"
+    },
+    "all_used_training_seeds": [
+      31001,
+      31002,
+      31101,
+      31102,
+      31201,
+      31202
+    ],
+    "stage3B_rule": "Stage 3B must use fresh common-random-number evaluation seeds disjoint from all_used_training_seeds; no Stage 3B evaluation has been run here."
+  },
+  "files": {
+    "controller_matrices": "data/stage3a_controller_matrices.npz",
+    "controller_matrices_sha256": "f5a4d417f7bbe32742d71abc2f71b653f53d9e0c8735c6c1dfd860d0034257d0",
+    "candidate_table": "results/stage3a_training_candidates.csv",
+    "aggregated_table": "results/stage3a_training_aggregated.csv",
+    "freeze_check": "results/stage3a_freeze_check.csv"
+  }
+}

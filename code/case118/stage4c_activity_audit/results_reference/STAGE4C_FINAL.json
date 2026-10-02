@@ -1,0 +1,88 @@
+{
+  "stage": "4C",
+  "target": "case118 H3 activity-scaled sigma_rms=0.15 completed PIC value",
+  "guide": "actual-cost CARE with 6-bin cross-entropy-adapted scalar schedule",
+  "guide_alpha_bins": [
+    1.145035051524038,
+    1.1643667536540094,
+    1.2089950178612163,
+    1.2139662529619306,
+    1.2743574182524686,
+    1.293949389365542
+  ],
+  "bin_edges": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "dt": 0.0025,
+  "n_paths_per_rep": 512,
+  "n_reps": 4,
+  "total_paths": 2048,
+  "seeds": [
+    49701,
+    49702,
+    49703,
+    49704
+  ],
+  "lambda_max": 0.00017580135596715542,
+  "Wplus_mean": 0.02496520750493513,
+  "Wplus_rep_sd": 3.323148003287137e-05,
+  "Wplus_rep_se": 1.6615740016435685e-05,
+  "Wplus_min": 0.024930753633342125,
+  "Wplus_max": 0.024998136603057268,
+  "ess_fraction_mean": 0.028797191638576032,
+  "ess_fraction_min": 0.01795677746147207,
+  "ess_fraction_max": 0.04487861646663768,
+  "ess_absolute_mean": 14.744162118950928,
+  "per_rep": [
+    {
+      "seed": 49701,
+      "n_paths": 512,
+      "dt": 0.0025,
+      "Wplus": 0.02498877818574939,
+      "ess": 16.301829480265287,
+      "ess_fraction": 0.03183951070364314,
+      "logweight_std": 3.1617446528582493,
+      "cross_fraction": 0.0,
+      "lambda_max": 0.00017580135596715542
+    },
+    {
+      "seed": 49702,
+      "n_paths": 512,
+      "dt": 0.0025,
+      "Wplus": 0.02494316159759175,
+      "ess": 9.1938700602737,
+      "ess_fraction": 0.01795677746147207,
+      "logweight_std": 3.196969734288028,
+      "cross_fraction": 0.0,
+      "lambda_max": 0.00017580135596715542
+    },
+    {
+      "seed": 49703,
+      "n_paths": 512,
+      "dt": 0.0025,
+      "Wplus": 0.024998136603057268,
+      "ess": 22.977851630918494,
+      "ess_fraction": 0.04487861646663768,
+      "logweight_std": 3.2715508255517367,
+      "cross_fraction": 0.0,
+      "lambda_max": 0.00017580135596715542
+    },
+    {
+      "seed": 49704,
+      "n_paths": 512,
+      "dt": 0.0025,
+      "Wplus": 0.024930753633342125,
+      "ess": 10.50309730434623,
+      "ess_fraction": 0.02051386192255123,
+      "logweight_std": 3.2839747769886913,
+      "cross_fraction": 0.0,
+      "lambda_max": 0.00017580135596715542
+    }
+  ]
+}
