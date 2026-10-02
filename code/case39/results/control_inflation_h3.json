@@ -1,0 +1,52 @@
+{
+  "homogeneous": {
+    "lambda_max": 0.002,
+    "virtual_rank": 29,
+    "guide_scale": 0.01,
+    "W_inflation_replicates": [
+      0.0845809529242751,
+      0.08462099362017489,
+      0.08456910761131903
+    ],
+    "W_inflation_mean": 0.08459035138525633,
+    "W_inflation_rep_sd": 2.7189847008755306e-05,
+    "ess_fraction_replicates": [
+      0.29030759200444506,
+      0.18662150156023127,
+      0.26346027495244667
+    ],
+    "cross_fraction_replicates": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_paths_per_rep": 1600,
+    "dt": 0.005,
+    "T": 3.0
+  },
+  "activity_scaled": {
+    "lambda_max": 0.0004908711790507407,
+    "virtual_rank": 38,
+    "guide_scale": 0.022,
+    "W_inflation_replicates": [
+      0.05304557958673191,
+      0.05255476389688633,
+      0.05291617226224537
+    ],
+    "W_inflation_mean": 0.05283883858195454,
+    "W_inflation_rep_sd": 0.00025438235774153127,
+    "ess_fraction_replicates": [
+      0.00714703819584843,
+      0.0030628195421644527,
+      0.01265554052739377
+    ],
+    "cross_fraction_replicates": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_paths_per_rep": 1600,
+    "dt": 0.005,
+    "T": 3.0
+  }
+}

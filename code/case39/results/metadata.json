@@ -1,0 +1,15 @@
+{
+  "case": "MATPOWER case39",
+  "n_bus": 39,
+  "n_branch": 46,
+  "n_gen": 10,
+  "event_bus": 20,
+  "load_loss_MW": 2724.476,
+  "loading_scale": 4.0,
+  "pre_event_max_edge_angle_deg": 46.1734,
+  "deterministic_equal_balance_max_angle_deg": 81.1083,
+  "horizon_s": 3.0,
+  "nominal_sigma_rms": 0.1,
+  "control_R": 0.2,
+  "note": "Cached summary tables used to regenerate paper figures; heavy scripts recompute from MATPOWER data."
+}

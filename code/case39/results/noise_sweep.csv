@@ -1,0 +1,43 @@
+noise,policy,sigma_rms,cost,exit_probability
+homogeneous,static,0,0.057,0
+homogeneous,static,0.05,0.066,0
+homogeneous,static,0.1,0.095,0.004
+homogeneous,static,0.15,0.142,0.02
+homogeneous,static,0.2,0.208,0.129
+homogeneous,static,0.25,0.292,0.257
+homogeneous,static,0.3,0.396,0.375
+homogeneous,droop,0,0.054,0
+homogeneous,droop,0.05,0.062,0
+homogeneous,droop,0.1,0.091,0.0
+homogeneous,droop,0.15,0.138,0.008
+homogeneous,droop,0.2,0.204,0.098
+homogeneous,droop,0.25,0.289,0.185
+homogeneous,droop,0.3,0.392,0.301
+homogeneous,H3 scaled LQR,0,0.053,0
+homogeneous,H3 scaled LQR,0.05,0.061,0
+homogeneous,H3 scaled LQR,0.1,0.089,0.0
+homogeneous,H3 scaled LQR,0.15,0.137,0.004
+homogeneous,H3 scaled LQR,0.2,0.203,0.094
+homogeneous,H3 scaled LQR,0.25,0.287,0.182
+homogeneous,H3 scaled LQR,0.3,0.39,0.285
+activity scaled,static,0,0.057,0
+activity scaled,static,0.05,0.064,0
+activity scaled,static,0.1,0.083,0.008
+activity scaled,static,0.15,0.117,0.064
+activity scaled,static,0.2,0.162,0.183
+activity scaled,static,0.25,0.22,0.293
+activity scaled,static,0.3,0.294,0.413
+activity scaled,droop,0,0.054,0
+activity scaled,droop,0.05,0.06,0
+activity scaled,droop,0.1,0.0795,0.0
+activity scaled,droop,0.15,0.113,0.042
+activity scaled,droop,0.2,0.157,0.126
+activity scaled,droop,0.25,0.214,0.257
+activity scaled,droop,0.3,0.287,0.355
+activity scaled,H3 scaled LQR,0,0.053,0
+activity scaled,H3 scaled LQR,0.05,0.059,0
+activity scaled,H3 scaled LQR,0.1,0.0791,0.0
+activity scaled,H3 scaled LQR,0.15,0.112,0.04
+activity scaled,H3 scaled LQR,0.2,0.156,0.12
+activity scaled,H3 scaled LQR,0.25,0.213,0.255
+activity scaled,H3 scaled LQR,0.3,0.286,0.35
