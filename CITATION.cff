@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Code for: How suboptimal is my controller allowed to be? Linearly solvable completion certificates for stochastic network control"
+authors:
+  - family-names: Chertkov
+    given-names: Michael
+    affiliation: "University of Arizona"
+    email: chertkov@arizona.edu
+license: MIT
+preferred-citation:
+  type: article
+  title: "How suboptimal is my controller allowed to be? Linearly solvable completion certificates for stochastic network control"
+  authors:
+    - family-names: Chertkov
+      given-names: Michael
+  journal: "SIAM Journal on Control and Optimization (submitted)"
+  year: 2026
